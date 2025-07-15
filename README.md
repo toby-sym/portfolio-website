@@ -4,7 +4,7 @@ Welcome to my personal portfolio website! This site showcases my background, ski
 
 ## 🌐 Live Site
 
-[[https://yourusername.github.io](https://toby-sym.github.io/portfolio-website)]([https://yourusername.github.io](https://toby-sym.github.io/portfolio-website)) 
+[[https://toby-sym.github.io/portfolio-website]]
 
 ## 🧰 Built With
 
