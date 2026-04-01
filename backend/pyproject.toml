@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "portfolio-api"
+version = "0.1.0"
+description = "FastAPI backend for portfolio website with admin panel"
+authors = ["Toby Symons"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.104.0"
+uvicorn = {version = "^0.24.0", extras = ["standard"]}
+sqlalchemy = "^2.0.0"
+psycopg2-binary = "^2.9.0"
+pydantic = "^2.0.0"
+pydantic-settings = "^2.0.0"
+python-jose = {version = "^3.3.0", extras = ["cryptography"]}
+python-dotenv = "^1.0.0"
+pytest = "^7.4.0"
+httpx = "^0.25.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
