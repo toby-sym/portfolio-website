@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte'
+  import { api } from '../api'
 
   let projects = []
   let loading = true
@@ -7,9 +8,7 @@
 
   onMount(async () => {
     try {
-      const response = await fetch('http://localhost:8001/projects')
-      if (!response.ok) throw new Error('Failed to fetch projects')
-      projects = await response.json()
+      projects = await api.getProjects()
     } catch (err) {
       error = err.message
       console.error(err)

@@ -5,12 +5,12 @@
   <div class="contact-methods">
     <div class="method">
       <h3>Email</h3>
-      <a href="mailto:contact@example.com">contact@example.com</a>
+      <a href="mailto:toby.symons5@gmail.com">toby.symons5@gmail.com</a>
     </div>
 
     <div class="method">
       <h3>LinkedIn</h3>
-      <a href="https://linkedin.com/in/toby-symons" target="_blank" rel="noopener">
+      <a href="https://www.linkedin.com/in/toby-symons-83961a303/" target="_blank" rel="noopener">
         linkedin.com/in/toby-symons
       </a>
     </div>
