@@ -62,7 +62,7 @@ Click **"Advanced"** and add the following environment variables:
 
 1. Click **"Create Web Service"**
 2. Wait for deployment to complete (2-3 minutes)
-3. You'll see your service URL: `https://portfolio-website.onrender.com`
+3. You'll see your service URL: `https://portfolio-website-3a8v.onrender.com`
 
 ### Monitor Deployment
 - Watch the **"Logs"** tab to see build progress
@@ -77,10 +77,10 @@ Once deployment is complete and service is running:
 
 ```bash
 # Initialize database tables and admin user
-curl -X POST https://portfolio-website.onrender.com/init
+curl -X POST https://portfolio-website-3a8v.onrender.com/init
 
 # Check that it worked
-curl https://portfolio-website.onrender.com/health
+curl https://portfolio-website-3a8v.onrender.com/health
 # Should return: {"status":"ok"}
 ```
 
@@ -90,18 +90,18 @@ curl https://portfolio-website.onrender.com/health
 
 ```bash
 # Test 1: Health check
-curl https://portfolio-website.onrender.com/health
+curl https://portfolio-website-3a8v.onrender.com/health
 
 # Test 2: Login (get JWT token)
-TOKEN=$(curl -s -X POST https://portfolio-website.onrender.com/auth/login \
+TOKEN=$(curl -s -X POST https://portfolio-website-3a8v.onrender.com/auth/login \
   -H "Content-Type: application/json" \
   -d '{"username":"admin","password":"changeme123"}' | jq -r '.access_token')
 
 # Test 3: Fetch projects
-curl https://portfolio-website.onrender.com/projects
+curl https://portfolio-website-3a8v.onrender.com/projects
 
 # Test 4: Create a project (with token from Test 2)
-curl -X POST https://portfolio-website.onrender.com/projects \
+curl -X POST https://portfolio-website-3a8v.onrender.com/projects \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $TOKEN" \
   -d '{
@@ -123,14 +123,14 @@ Once backend is live on Render:
 ### For Local Development:
 ```bash
 cd frontend
-echo "VITE_API_URL=https://portfolio-website.onrender.com" > .env.local
+echo "VITE_API_URL=https://portfolio-website-3a8v.onrender.com" > .env.local
 npm run dev
 ```
 
 ### For Production (GitHub Pages):
 Update [frontend/src/api.js](frontend/src/api.js) line ~6:
 ```javascript
-const BASE_URL = import.meta.env.VITE_API_URL || 'https://portfolio-website.onrender.com';
+const BASE_URL = import.meta.env.VITE_API_URL || 'https://portfolio-website-3a8v.onrender.com';
 ```
 
 Then build and deploy frontend to GitHub Pages.
@@ -213,13 +213,13 @@ If you want to use a custom domain instead of `.onrender.com`:
 render logs --name portfolio-website
 
 # Test backend health from anywhere
-curl https://portfolio-website.onrender.com/health
+curl https://portfolio-website-3a8v.onrender.com/health
 
 # Generate new SECRET_KEY for rotation
 python3 -c "import secrets; print(secrets.token_hex(32))"
 
 # Backup all projects from live backend
-curl https://portfolio-website.onrender.com/projects > projects_backup.json
+curl https://portfolio-website-3a8v.onrender.com/projects > projects_backup.json
 ```
 
 ---

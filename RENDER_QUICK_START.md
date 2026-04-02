@@ -31,20 +31,20 @@ CORS_ORIGINS=["http://localhost:5173","https://toby-sym.github.io"]
 ### 3. Deploy & Verify (10 min)
 - Click "Create Web Service"
 - Wait 2-3 minutes for deployment
-- Test: `curl https://portfolio-website.onrender.com/health`
-- Initialize: `curl -X POST https://portfolio-website.onrender.com/init`
+- Test: `curl https://portfolio-website-3a8v.onrender.com/health`
+- Initialize: `curl -X POST https://portfolio-website-3a8v.onrender.com/init`
 
 ### 4. Update Frontend (5 min)
 Update `frontend/.env.local`:
 ```
-VITE_API_URL=https://portfolio-website.onrender.com
+VITE_API_URL=https://portfolio-website-3a8v.onrender.com
 ```
 
 ---
 
 ## Your Deployed URL
-### Backend: `https://portfolio-website.onrender.com`
-### Frontend: `https://toby-sym.github.io/portfolio-website`
+### Backend: `https://portfolio-website-3a8v.onrender.com` ✅ LIVE
+### Frontend: `https://toby-sym.github.io/portfolio-website` (Next step: deploy)
 
 ---
 
